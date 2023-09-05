@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Playlist</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./playlist.css">
+  
+</head>
+  <body>
+    <div class="main d-flex">
+        <div class="my-col-1 d-flex flex-column gap-3">
+            <div class="logo py-3">
+                <img class="m-0" id="logo" src="./assets/logo/Spotify logo.png" alt="spotify logo">
+            </div>
+            <nav class="nav d-flex flex-column m-0">
+                <div class="home d-flex align-items-center"> <svg width="15" height="15" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="fi-ss-home" clip-path="url(#clip0_306_615)">
+                    <path id="Vector" d="M15.5849 19.6659C14.6021 19.6659 13.6596 20.0888 12.9646 20.8417C12.2697 21.5946 11.8793 22.6157 11.8793 23.6804V33.0822H19.2906V23.6804C19.2906 22.6157 18.9002 21.5946 18.2052 20.8417C17.5103 20.0888 16.5677 19.6659 15.5849 19.6659Z" fill="white"/>
+                    <path id="Vector_2" d="M17.2376 2.04697C16.784 1.60463 16.1953 1.35986 15.5849 1.35986C14.9746 1.35986 14.3858 1.60463 13.9322 2.04697L0.762268 14.8879V28.8047C0.762268 29.9404 1.17871 31.0296 1.91999 31.8326C2.66126 32.6357 3.66665 33.0868 4.71497 33.0868H9.40881V23.6809C9.40881 21.9064 10.0595 20.2046 11.2177 18.9498C12.376 17.6951 13.9469 16.9902 15.5849 16.9902C17.2229 16.9902 18.7938 17.6951 19.9521 18.9498C21.1103 20.2046 21.761 21.9064 21.761 23.6809V33.0828H26.4548C27.5032 33.0828 28.5086 32.6317 29.2498 31.8286C29.9911 31.0256 30.4076 29.9364 30.4076 28.8007V14.8839L17.2376 2.04697Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_306_615">
+                    <rect width="29.6453" height="32.1157" fill="white" transform="translate(0.762268 0.932129)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    <span class="nav-text">Home</span>
+                </div>
+                <div class="search d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 29 29" fill="none">
+                        <rect x="0.997498" y="0.15979" width="1.23522" height="28.4101" fill="white"/>
+                        <rect x="9.64404" y="0.15979" width="1.23522" height="28.4101" fill="white"/>
+                        <rect x="15.8201" y="0.655029" width="1.23522" height="29.3017" transform="rotate(-23.634 15.8201 0.655029)" fill="white"/>
+                      </svg>
+                      <span class="nav-text">Search</span>
+                </div>
+                <div class="library d-flex align-items-center">
+                    <svg width="15" height="15" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="01 align center">
+                        <path id="Vector" d="M30.4073 28.8279L22.6723 21.0929C24.6816 18.6356 25.6695 15.5 25.4316 12.3347C25.1938 9.16938 23.7485 6.21658 21.3946 4.08705C19.0407 1.95752 15.9584 0.814177 12.7852 0.893518C9.61198 0.972858 6.59065 2.26881 4.34614 4.51332C2.10164 6.75782 0.805683 9.77916 0.726343 12.9524C0.647002 16.1256 1.79034 19.2079 3.91988 21.5618C6.04941 23.9157 9.0022 25.361 12.1675 25.5988C15.3328 25.8366 18.4684 24.8488 20.9257 22.8395L28.6607 30.5745L30.4073 28.8279ZM13.1142 23.1631C11.1598 23.1631 9.24925 22.5836 7.6242 21.4978C5.99915 20.4119 4.73258 18.8686 3.98465 17.063C3.23673 15.2573 3.04104 13.2704 3.42233 11.3536C3.80362 9.43668 4.74476 7.67592 6.12675 6.29393C7.50874 4.91194 9.2695 3.97079 11.1864 3.5895C13.1033 3.20821 15.0901 3.4039 16.8958 4.15183C18.7015 4.89976 20.2448 6.16633 21.3306 7.79137C22.4164 9.41642 22.996 11.327 22.996 13.2814C22.993 15.9013 21.951 18.413 20.0984 20.2656C18.2459 22.1181 15.7341 23.1602 13.1142 23.1631Z" fill="white"/>
+                        </g>
+                        </svg>
+                        <span class="nav-text">Your Library</span>
+                </div>
+            </nav>
+            <div class="nav-2 py-1  d-flex flex-column">
+                <div class="nav2-child d-flex align-items-center gap-1">
+                    <img class="bg-white" src="./assets/nav2/fi-ss-plus-small.svg" alt="">
+                    <span>Create Playlists</span>
+                </div>
+                <div class="nav2-child d-flex align-items-center gap-1">
+                    <div class=" m-0 px-1 d-flex align-items-center py-1"><img class="p-0" src="./assets/nav2/fi-ss-heart.svg" alt=""></div>
+                    <span>Liked Songs</span>
+                </div>
+            </div>
+            <hr>
+            <div class="singer-container">
+                <img id="singer-pic" src="./playlistAsset/singer.jpg" alt="">
+            </div>
+         </div>
+         <div class="my-col-2">
+            <div class="my-row-1 position-sticky top-0 z-1">
+                <div class="d-flex align-items-center M-0 p-0">
+                    <img class="m-0" src="./playlistAsset/album-main.png" alt="">
+                    <div class="my-row-1-col-2 ">
+                        <p class="m-0 fs-6 fw-bold">PLAYLIST</p>
+                        <h1 class="fw-bolder fs-1">Pop Right Now</h1>
+                        <p class="fw-lighter fs-6 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus</p>
+                        <span class="fw-lighter fs-6">Spotify.860305 likes.100 songs,5hr 5 min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-container">
+                <div class="bottom-row-1 d-flex gap-4 px-2">
+                    <img id="bottom-playmusic" src="./playlistAsset/thumb_play.svg" alt="">
+                    <img id="bottom-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                    <img id="bottom-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                </div>
+                
+                
+                <div class="bottom-songs">
+                   <table>
+                        <tr>
+                                
+                                <td class="text-start"><p class="m-0">Title</p></td>
+                                <td><p class="m-0">Album</p></td>
+                                <td><p class="m-0">Date Added</p></td>
+                                <td><p class="m-0 text-end">Time</p></td>
+                            
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        <tr class="songs-card">
+                            <td class="text-start"><div class="music-name  d-flex gap-1 align-items-center justify-content-start">
+                                
+                                <img src="./playlistAsset/dua-lipa-img.jpg" alt="">
+                                
+                                <div>
+                                    <p class="m-0" id="bottom-song-name">We're Good</p>
+                                    <p class="m-0" id="bottom-singer-name">Dua lipa</p> 
+                                </div>
+                            </div></td>
+                            <td>
+                                <div class="album">
+                                    Future Nostalgia (The Moonlight Edition)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-added">일 전</div>
+                            </td>
+                           <td>
+                            <div class="duration d-flex gap-1 align-items-center justify-content-end">
+                                <img id="duration-heart" src="./playlistAsset/ic/heart.svg" alt="">
+                                <p>2:45</p>
+                                <img id="duration-more" src="./playlistAsset/ic/more_big.svg" alt="">
+                            </div>
+                           </td>
+                        </tr>
+                        
+                        
+                    </table>
+                </div>
+            </div>
+         </div>
+         <footer class="w-100  position-fixed bottom-0 ">
+            <div class="d-flex justify-content-between bottom-0 d-flex  p-0 my-3">
+                <div class="footer-col-1 d-flex align-items-center mx-4 gap-2 px-2">
+                    <img src="./assets/footer/music-pic.jpg" alt="">
+                    <p>Dreaming On<br/>NEFFEX</p>
+                    <img id="heart-footer" src="./assets/footer/bx_bxs-heart.svg" alt="">
+                </div>
+                <div class="footer-col-2  d-flex align-items-center flex-column">
+                    <div class="col-2-row-1 d-flex gap-2">
+                        <img src="./assets/footer/play/raphael_shuffle.svg" alt="">
+                        <img src="./assets/footer/play/bx_bx-skip-previous.svg" alt="">
+                        <img src="./assets/footer/play/gridicons_play.svg" alt="">
+                        <img src="./assets/footer/play/bx_bx-skip-previous (1).svg" alt="">
+                        <img src="./assets/footer/play/Group.svg" alt="">
+                    </div>
+                    <div class="col-2-row-2 d-flex  align-items-center">
+                        2.11
+                        <div class="now-playing-progess-bg mx-1 rounded p-0">
+                            <div class="now-playing-progess-fr "></div>
+                        </div>
+                        2.43
+                    </div>
+                </div>
+                <div class="footer-col-3 d-flex align-items-center gap-2 mx-4">
+                    <img src="./assets/footer/last-col/ph_microphone-stage.svg" alt="">
+                    <img src="./assets/footer/last-col/carbon_laptop.svg" alt="">
+                    <img src="./assets/footer/last-col/carbon_query-queue.svg" alt="">
+                    <img src="./assets/footer/last-col/Group.svg" alt="">
+                    <div class="sound-bg rounded p-0">
+                        <div class="sound-fr"></div>
+                    </div>
+                    <img src="./assets/footer/last-col/zoom-in.svg" alt="">
+                </div>
+            </div>
+        </footer>
+  </body>
+</html>
